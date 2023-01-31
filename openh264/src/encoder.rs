@@ -207,6 +207,7 @@ impl Encoder {
             params.iRCMode = config.rate_control_mode.to_c();
             params.bEnableFrameSkip = config.enable_skip_frame;
             params.iTargetBitrate = config.target_bitrate as c_int;
+            params.uiIntraPeriod = 60;
             params.bEnableDenoise = config.enable_denoise;
             params.fMaxFrameRate = config.max_frame_rate;
             raw_api.initialize_ext(&params).ok()?;
